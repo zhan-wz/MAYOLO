@@ -29,12 +29,9 @@ pip install -r requirements.txt
    
 ### Step-Through Example
 #### Downloaded Dataset
-```shell
-bash data/scripts/get_widerface.sh
-```
 
 #### Dataset
-Download the [Part-ID] dataset. Then convert it to YOLO format.
+Download the [Part-ID] dataset. 
 ```shell
 # You can modify convert.py and voc_label.py if needed.
 python3 data/convert.py
@@ -63,30 +60,8 @@ python train.py --weights preweight.pt
 
 #### Evaluate   
 ```shell
-python3 test_widerface.py --weights 'your test model' --img-size 640
-  
-cd widerface_evaluate/    
-python evaluation.py --pred ./widerface_txt_x
+python3 test_mayolo.py --weights 'your test model' --img-size 640
 ```
-<div style="display: flex; gap: 10px;">
-  <img src="assert/easy.jpg" alt="Easy" style="width: 260px;"/>
-  <img src="assert/medium.jpg" alt="Medium" style="width: 260px;"/>
-  <img src="assert/hard.jpg" alt="Hard" style="width: 260px;"/>
-</div>
-
-
-### Visualize
-Visualization of small-scale face detection effect:
-
-<p align = "center">    
-<img  src="assert/scale.jpg" width="350" />
-</p>
-
-Visualization of the heat map effect of attention covering human faces:
-
-<p align = "center">    
-<img  src="assert/occlusion.jpg" width="350" />
-</p>
 
 
 ### Finetune
